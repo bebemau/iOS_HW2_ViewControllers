@@ -33,12 +33,7 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     
-    //construct table
-    self.lblRedCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Red"] stringValue];
-    self.lblGreenCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Green"] stringValue];
-    self.lblBlueCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Blue"] stringValue];
-    self.lblCustomCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Custom"] stringValue];
-    self.lblRandomCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Random"] stringValue];
+    [self populateCounts];
 
 }
 
@@ -64,9 +59,17 @@
     for(id key in keys){
         [self.appDelegate.ColorDictionary setObject:[NSNumber numberWithInt:0] forKey:key];
     }
+    
+    [self populateCounts];
 }
 
-
+- (void)populateCounts{
+    self.lblRedCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Red"] stringValue];
+    self.lblGreenCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Green"] stringValue];
+    self.lblBlueCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Blue"] stringValue];
+    self.lblCustomCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Custom"] stringValue];
+    self.lblRandomCount.text = [[self.appDelegate.ColorDictionary objectForKey:@"Random"] stringValue];
+}
 
 
 
