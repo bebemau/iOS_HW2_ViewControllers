@@ -48,7 +48,12 @@
 }
 
 - (IBAction)btnReset_Clicked:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle: nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
     
+    [alert addAction: [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDestructive handler:nil] ];
+    [alert addAction: [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil] ];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
