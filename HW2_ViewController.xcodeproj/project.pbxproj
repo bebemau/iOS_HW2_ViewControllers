@@ -49,8 +49,8 @@
 		25132F281AE470BD00C9CEF2 /* colors@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "colors@2x.png"; sourceTree = "<group>"; };
 		25132F291AE470BD00C9CEF2 /* data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data.png; sourceTree = "<group>"; };
 		25132F2A1AE470BD00C9CEF2 /* data@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "data@2x.png"; sourceTree = "<group>"; };
-		25132F2B1AE470BD00C9CEF2 /* UIColor+UWExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UWExtensions.h"; sourceTree = "<group>"; };
-		25132F2C1AE470BD00C9CEF2 /* UIColor+UWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UWExtensions.m"; sourceTree = "<group>"; };
+		25132F2B1AE470BD00C9CEF2 /* UIColor+UWExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UWExtensions.h"; path = "Assets/UIColor+UWExtensions.h"; sourceTree = "<group>"; };
+		25132F2C1AE470BD00C9CEF2 /* UIColor+UWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UWExtensions.m"; path = "Assets/UIColor+UWExtensions.m"; sourceTree = "<group>"; };
 		25132F321AE470CF00C9CEF2 /* ColorDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorDisplayViewController.h; sourceTree = "<group>"; };
 		25132F331AE470CF00C9CEF2 /* ColorDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorDisplayViewController.m; sourceTree = "<group>"; };
 		25132F341AE470CF00C9CEF2 /* ColorTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTabViewController.h; sourceTree = "<group>"; };
@@ -98,6 +98,8 @@
 		25132EFC1AE4709100C9CEF2 /* HW2_ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				25132F2B1AE470BD00C9CEF2 /* UIColor+UWExtensions.h */,
+				25132F2C1AE470BD00C9CEF2 /* UIColor+UWExtensions.m */,
 				25132F3B1AE470D500C9CEF2 /* ViewController */,
 				25132F261AE470BD00C9CEF2 /* Assets */,
 				25132F011AE4709100C9CEF2 /* AppDelegate.h */,
@@ -143,8 +145,6 @@
 				25132F281AE470BD00C9CEF2 /* colors@2x.png */,
 				25132F291AE470BD00C9CEF2 /* data.png */,
 				25132F2A1AE470BD00C9CEF2 /* data@2x.png */,
-				25132F2B1AE470BD00C9CEF2 /* UIColor+UWExtensions.h */,
-				25132F2C1AE470BD00C9CEF2 /* UIColor+UWExtensions.m */,
 			);
 			path = Assets;
 			sourceTree = "<group>";

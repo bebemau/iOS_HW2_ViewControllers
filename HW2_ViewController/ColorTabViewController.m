@@ -9,6 +9,7 @@
 #import "ColorTabViewController.h"
 #import "ColorDisplayViewController.h"
 #import "AppDelegate.h"
+#import "UIColor+UWExtensions.h"
 
 @interface ColorTabViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *txtRed;
@@ -75,6 +76,11 @@
         UIColor *color = [UIColor colorWithRed: self.txtRed.text.floatValue green: self.txtGreen.text.floatValue blue: self.txtBlue.text.floatValue alpha:1];
         [self displayColor:color colorKey:@"Custom"];
     }
+}
+
+- (IBAction)btnRandom_Clicked:(id)sender {
+    UIColor *color = [UIColor uw_randomColor];
+    [self displayColor:color colorKey:@"Random"];
 }
 
 @end
