@@ -50,11 +50,25 @@
 - (IBAction)btnReset_Clicked:(id)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle: nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [alert addAction: [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDestructive handler:nil] ];
+    [alert addAction: [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        [self clearDictionary];
+    }]];
     [alert addAction: [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil] ];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+                       
+-(void)clearDictionary{
+    NSArray *keys = self.appDelegate.ColorDictionary.allKeys;
+    
+    for(id key in keys){
+        [self.appDelegate.ColorDictionary setObject:[NSNumber numberWithInt:0] forKey:key];
+    }
+}
+
+
+
+
 
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 //{
