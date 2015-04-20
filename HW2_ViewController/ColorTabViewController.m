@@ -36,29 +36,33 @@
 
 
 - (IBAction)btnRed_Clicked:(id)sender {
-    [self displayColor: [UIColor redColor]];
+    [self displayColor: [UIColor redColor] colorKey:@"Red"];
 }
 
 - (IBAction)btnGreen_Clicked:(id)sender {
-    [self displayColor: [UIColor greenColor] ];
+    [self displayColor: [UIColor greenColor] colorKey:@"Green" ];
 }
 
 - (IBAction)btnBlue_Clicked:(id)sender {
-    [self displayColor: [UIColor blueColor] ];
+    [self displayColor: [UIColor blueColor] colorKey:@"Blue" ];
 }
 
-- (void) displayColor: (UIColor*)colorSelected{
+- (void) displayColor: (UIColor*)colorSelected colorKey: (NSString*)key{
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ColorDisplayVC"];
+    
+    //set color
     ((ColorDisplayViewController*)vc).displayColor = colorSelected;
     
-    int count = [[self.ColorCount objectForKey:@"Red"] intValue];
+    //set count
+    int count = [[self.ColorCount objectForKey:key] intValue] + 1;
+    [self.ColorCount setObject:[NSNumber numberWithInt:count] forKey:key];
     ((ColorDisplayViewController*)vc).displayCount = count;
     
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)btnCustom_Clicked:(id)sender {
-    if (![self.txtBlue.text  isEqual: @""] || ![self.txtGreen.text  isEqual: @""] || ![self.txtGreen.text  isEqual: @""])
+    if ([self.txtBlue.text  isEqual: @""] || [self.txtGreen.text  isEqual: @""] || [self.txtGreen.text  isEqual: @""])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"All fields are required"
                                                         message:@"Please enter all values."
@@ -70,7 +74,7 @@
     else{
         
         UIColor *color = [UIColor colorWithRed: self.txtRed.text.floatValue green: self.txtGreen.text.floatValue blue: self.txtBlue.text.floatValue alpha:1];
-        [self displayColor:color];
+        [self displayColor:color colorKey:@"Custom"];
     }
 }
 
