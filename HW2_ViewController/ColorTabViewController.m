@@ -8,11 +8,14 @@
 
 #import "ColorTabViewController.h"
 #import "ColorDisplayViewController.h"
+#import "AppDelegate.h"
 
 @interface ColorTabViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *txtRed;
 @property (weak, nonatomic) IBOutlet UITextField *txtGreen;
 @property (weak, nonatomic) IBOutlet UITextField *txtBlue;
+@property NSMutableDictionary* ColorCount;
+@property AppDelegate *appDelegate;
 
 @end
 
@@ -21,12 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ColorCount = [[NSMutableDictionary alloc]initWithCapacity:5];
-    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Red"];
-    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Green"];
-    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Blue"];
-    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Custom"];
-    [self.ColorCount setObject:[NSNumber numberWithInt:0] forKey:@"Random"];
+    self.appDelegate = [[UIApplication sharedApplication] delegate];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +53,8 @@
     ((ColorDisplayViewController*)vc).displayColor = colorSelected;
     
     //set count
-    int count = [[self.ColorCount objectForKey:key] intValue] + 1;
-    [self.ColorCount setObject:[NSNumber numberWithInt:count] forKey:key];
+    int count = [[self.appDelegate.ColorDictionary objectForKey:key] intValue] + 1;
+    [self.appDelegate.ColorDictionary setObject:[NSNumber numberWithInt:count] forKey:key];
     ((ColorDisplayViewController*)vc).displayCount = count;
     
     [self presentViewController:vc animated:YES completion:nil];

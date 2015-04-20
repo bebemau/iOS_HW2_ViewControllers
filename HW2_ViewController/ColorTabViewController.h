@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ColorTabViewController : UIViewController
-@property NSMutableDictionary* ColorCount;
 
 @end

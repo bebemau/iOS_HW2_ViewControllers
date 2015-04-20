@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.ColorDictionary = [[NSMutableDictionary alloc]initWithCapacity:5];
+    [self.ColorDictionary  setObject:[NSNumber numberWithInt:0] forKey:@"Red"];
+    [self.ColorDictionary  setObject:[NSNumber numberWithInt:0] forKey:@"Green"];
+    [self.ColorDictionary setObject:[NSNumber numberWithInt:0] forKey:@"Blue"];
+    [self.ColorDictionary  setObject:[NSNumber numberWithInt:0] forKey:@"Custom"];
+    [self.ColorDictionary  setObject:[NSNumber numberWithInt:0] forKey:@"Random"];
+    
     return YES;
 }
 

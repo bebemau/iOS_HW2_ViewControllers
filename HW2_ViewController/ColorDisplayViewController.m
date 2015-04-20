@@ -10,7 +10,6 @@
 
 @interface ColorDisplayViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplayCount;
-
 @end
 
 @implementation ColorDisplayViewController
